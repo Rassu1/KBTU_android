@@ -37,7 +37,7 @@
 
     <ImageView
         android:id="@+id/main_page_central_photo"
-        android:layout_width="400dp"
+        android:layout_width="600dp"
         android:layout_height="200dp"
         android:layout_marginTop="150dp"
         android:src="@drawable/main_page_photo_2"
@@ -48,26 +48,28 @@
 
     <Button
         android:id="@+id/sign_in_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="15dp"
         android:text="@string/Sign_in"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_page_central_photo"
-        android:backgroundTint="@color/blue"
-        android:layout_marginTop="15dp"
         />
 
     <Button
         android:id="@+id/registr_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="15dp"
         android:text="@string/Registr_text"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_in_button"
-        android:backgroundTint="@color/blue"
-        android:layout_marginTop="15dp"
         />
 
 
