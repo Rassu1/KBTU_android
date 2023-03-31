@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_back"
+    android:background="@drawable/back_7"
     tools:context=".MainActivity">
 
     <TextView
@@ -39,11 +39,37 @@
         android:id="@+id/main_page_central_photo"
         android:layout_width="400dp"
         android:layout_height="200dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:src="@drawable/main_page_photo_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_page_subtitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/main_page_subtitle"
+        android:contentDescription="@string/Main_Image_Button" />
+
+    <Button
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Sign_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_page_central_photo"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="15dp"
+        />
+
+    <Button
+        android:id="@+id/registr_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Registr_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="15dp"
+        />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
