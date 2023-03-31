@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">FInal</string>
     <string name="Project_name">JET BOOK STORE</string>
-    <string name="Main_page_subtitle">ЛУЧШИЙ ОНЛАЙН-МАГАЗИН КНИГ</string>
+    <string name="Main_page_subtitle">ОНЛАЙН-МАГАЗИН КНИГ</string>
     <string name="Main_Image_Button">Icons_Photo</string>
-    <string name="Registr_text">Зарегистрироваться</string>
+    <string name="Registr_text">Регистрация</string>
     <string name="Sign_in">Войти</string>
 </resources>
