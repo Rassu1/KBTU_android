@@ -7,4 +7,31 @@
     android:background="@drawable/register_back_2"
     tools:context=".activity_register">
 
+
+    <ImageView
+        android:id="@+id/reg_page_main_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/reg_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/Reg_main_icon" />
+
+    <TextView
+        android:id="@+id/reg_page_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Registr_text"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

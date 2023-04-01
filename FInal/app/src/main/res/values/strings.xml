@@ -5,4 +5,9 @@
     <string name="Main_Image_Button">Icons_Photo</string>
     <string name="Registr_text">Регистрация</string>
     <string name="Sign_in">Войти</string>
+    <string name="Reg_main_icon">Main_Icon</string>
+    <string name="Sig_main_icon">MAin_Icon</string>
+    <string name="User_name">Введите имя пользователя</string>
+    <string name="User_pass">Введите пароль</string>
+    <string name="User_email">Введите email</string>
 </resources>
