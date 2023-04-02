@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomTextViewStyle">
+        <item name="android:fontFamily">ArefRuqaaInk</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorAccent">@color/orange</item>
+    </style>
+</resources>

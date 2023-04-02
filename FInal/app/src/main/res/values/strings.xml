@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FInal</string>
     <string name="Project_name">JET BOOK STORE</string>
-    <string name="Main_page_subtitle">ОНЛАЙН-МАГАЗИН КНИГ</string>
+    <string name="Main_page_subtitle">КНИЖНЫЙ ОНЛАЙН-МАГАЗИН</string>
     <string name="Main_Image_Button">Icons_Photo</string>
     <string name="Registr_text">Регистрация</string>
     <string name="Sign_in">Войти</string>
@@ -13,4 +13,8 @@
     <string name="User_pass">Введите пароль</string>
     <string name="User_pass_ver">Введите повторно пароль</string>
     <string name="User_email">Введите email</string>
+    <string name="main_menu">Главная</string>
+    <string name="bucket_menu">Корзина</string>
+    <string name="profile_menu">Профиль</string>
+    <string name="ratings_main">Рейтинги</string>
 </resources>

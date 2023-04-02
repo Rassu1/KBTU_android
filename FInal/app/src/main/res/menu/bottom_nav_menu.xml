@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/main_menu"
+        android:icon="@drawable/lupa"/>
+    <item
+        android:id="@+id/ratings"
+        android:title="@string/ratings_main"
+        android:icon="@drawable/star"/>
+    <item
+        android:id="@+id/settings"
+        android:title="@string/bucket_menu"
+        android:icon="@drawable/telega"/>
+    <item
+        android:id="@+id/person"
+        android:title="@string/profile_menu"
+        android:icon="@drawable/profile"/>
+
+
+</menu>

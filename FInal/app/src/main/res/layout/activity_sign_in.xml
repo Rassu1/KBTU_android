@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sign_in_back_1"
-    tools:context=".activity_sign_in">
+    tools:context=".ActivitySignIn">
 
     <ImageView
         android:id="@+id/reg_page_main_icon"
@@ -72,13 +72,14 @@
         android:text="@string/Sign_in"
         android:textColor="@color/white"
         android:textSize="15sp"
+        app:cornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="150dp"/>
+        android:layout_marginBottom="175dp"/>
 
     <TextView
-        android:id="@+id/sig_no_ver"
+        android:id="@+id/reg_no_ver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Alreaedy_sig"

@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
         button_sig = findViewById(R.id.sign_in_button)
 
         button_sig.setOnClickListener {
-            val intent = Intent(this@MainActivity, activity_sign_in::class.java)
+            val intent = Intent(this@MainActivity, ActivitySignIn::class.java)
             startActivity(intent)
         }
 
         button_reg = findViewById(R.id.registr_button)
 
         button_reg.setOnClickListener {
-            val intent = Intent(this@MainActivity, activity_register::class.java)
+            val intent = Intent(this@MainActivity, ActivityRegister::class.java)
             startActivity(intent)
         }
     }
