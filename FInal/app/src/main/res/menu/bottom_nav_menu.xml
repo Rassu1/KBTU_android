@@ -7,16 +7,12 @@
         android:icon="@drawable/lupa"/>
     <item
         android:id="@+id/ratings"
-        android:title="@string/ratings_main"
+        android:title="@string/ratings_menu"
         android:icon="@drawable/star"/>
     <item
-        android:id="@+id/settings"
+        android:id="@+id/bucket"
         android:title="@string/bucket_menu"
         android:icon="@drawable/telega"/>
-    <item
-        android:id="@+id/person"
-        android:title="@string/profile_menu"
-        android:icon="@drawable/profile"/>
 
 
 </menu>

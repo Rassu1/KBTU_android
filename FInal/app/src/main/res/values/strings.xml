@@ -16,5 +16,7 @@
     <string name="main_menu">Главная</string>
     <string name="bucket_menu">Корзина</string>
     <string name="profile_menu">Профиль</string>
-    <string name="ratings_main">Рейтинги</string>
+    <string name="ratings_menu">Рейтинги</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
