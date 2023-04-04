@@ -7,7 +7,6 @@
     android:background="@drawable/register_back_2"
     tools:context=".ActivityRegister">
 
-
     <ImageView
         android:id="@+id/reg_page_main_icon"
         android:layout_width="150dp"

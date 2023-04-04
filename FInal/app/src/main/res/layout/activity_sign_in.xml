@@ -64,6 +64,20 @@
         android:autofillHints="@string/User_pass"
         tools:ignore="LabelFor" />
 
+    <TextView
+        android:id="@+id/fog_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/fog_pass"
+        android:textAlignment="center"
+        android:textColor="@color/orange"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_User_pass" />
+
     <Button
         android:id="@+id/sign_in_button"
         android:layout_width="200dp"

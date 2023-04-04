@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "314822609517",
+    "project_id": "jetbookstore-489d0",
+    "storage_bucket": "jetbookstore-489d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314822609517:android:cabc0831671bfcf562cd64",
+        "android_client_info": {
+          "package_name": "com.example.afinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314822609517-lbid42js29tf9qhf4f4feq9sht3fn8sn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRyv5wVRn1gwNcIDpVwbkU2VuRAjRh954"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314822609517-lbid42js29tf9qhf4f4feq9sht3fn8sn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
