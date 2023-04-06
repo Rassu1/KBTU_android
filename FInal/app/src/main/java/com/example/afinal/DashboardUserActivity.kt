@@ -23,7 +23,7 @@ class DashboardUserActivity : AppCompatActivity() {
 
         binding.logOutBut.setOnClickListener{
             firebaseAuth.signOut()
-            startActivity(Intent(this@DashboardUserActivity, HomeActivity::class.java))
+            startActivity(Intent(this@DashboardUserActivity, MainActivity::class.java))
             finish()
         }
     }

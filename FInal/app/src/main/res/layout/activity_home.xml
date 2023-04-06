@@ -4,29 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_back"
     tools:context=".HomeActivity">
 
-    <FrameLayout
-        android:id="@+id/flFragment"
+    <EditText
+        android:id="@+id/SearchEt"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_fill_blue"
+        android:drawableStart="@drawable/baseline_search_24"
+        android:hint="Search"
+        android:padding="20dp"
+        android:layout_marginTop="100dp"
+        android:textColorHint="@color/blue"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="450dp"
-        android:layout_height="60dp"
-        app:itemBackground="@color/white"
-        app:itemIconTint="@color/bottom_nav_colors"
-        app:itemTextColor="@color/bottom_nav_colors"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriesRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomLl"
+        android:layout_below="@id/SearchEt"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/SearchEt"
+        tools:listitem="@layout/row_category" />
+
+    <LinearLayout
+        android:id="@+id/bottomLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/categoriesRv"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/addCategoryBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="550dp"
+            android:layout_weight="1"
+            android:background="@color/blue"
+            android:minHeight="50dp"
+            android:text="Add category"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addPdfFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="550dp"
+            android:backgroundTint="@color/blue"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_pdf_white"
+            app:fabCustomSize="50dp"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
