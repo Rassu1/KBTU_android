@@ -54,12 +54,16 @@ class MainFragment : Fragment() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                
+
             }
         })
 
         binding.addCategoryBtn.setOnClickListener {
             startActivity(Intent(requireContext(), CategoryAddActivity::class.java))
+        }
+
+        binding.addPdfFab.setOnClickListener {
+            startActivity(Intent(requireContext(), PdfAddActivity::class.java))
         }
     }
 
@@ -82,7 +86,7 @@ class MainFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+
             }
         })
     }
