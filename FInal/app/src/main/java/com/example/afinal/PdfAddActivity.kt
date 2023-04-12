@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -22,9 +21,14 @@ class PdfAddActivity : AppCompatActivity() {
     private lateinit var categoryEt: EditText
     private lateinit var buttonChooseImage: Button
     private lateinit var submitBtn: Button
+
+
     private lateinit var database: DatabaseReference
     private lateinit var storage: FirebaseStorage
     private lateinit var storageRef: StorageReference
+
+    private lateinit var progressDialog: ProgressDialog
+
     private var mImageUri: Uri? = null
 
     private val PICK_IMAGE_REQUEST = 1
@@ -36,6 +40,12 @@ class PdfAddActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().reference
         storage = FirebaseStorage.getInstance()
         storageRef = storage.reference.child("images")
+
+
+        progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Please wait")
+        progressDialog.setCanceledOnTouchOutside(false)
+
 
         titleEt = findViewById(R.id.titleEt)
         descriptionEt = findViewById(R.id.descriptionEt)
@@ -54,6 +64,10 @@ class PdfAddActivity : AppCompatActivity() {
             val description = descriptionEt.text.toString().trim()
             val price = priceEt.text.toString().trim()
             val category = categoryEt.text.toString().trim()
+
+            val id = System.currentTimeMillis()
+
+            val rating = 0
 
             if (title.isEmpty()) {
                 titleEt.error = "Введите название книги"
@@ -75,10 +89,11 @@ class PdfAddActivity : AppCompatActivity() {
             database.child("Categories").child(category)
                 .addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
+                        progressDialog.show()
                         if (snapshot.exists()) {
-                            val book = Book(title, description, price, category)
+                            val book = Book(id, title, description, price, category, rating)
                             val bookRef =
-                                database.child("Categories").child(category).child("books").push()
+                                database.child("Categories").child(category).child("books").child(title)
                             val bookId = bookRef.key.toString()
                             bookRef.setValue(book).addOnSuccessListener {
                                 if (mImageUri != null) {
@@ -91,8 +106,13 @@ class PdfAddActivity : AppCompatActivity() {
                                                     .child("books").child(bookId)
                                                     .child("image").setValue(uri.toString())
                                                     .addOnSuccessListener {
-                                                        Toast.makeText(this@PdfAddActivity, "Have image", Toast.LENGTH_SHORT).show()
+                                                        progressDialog.dismiss()
+                                                        Toast.makeText(this@PdfAddActivity, "Added successfully", Toast.LENGTH_SHORT).show()
                                                         finish()
+                                                    }
+                                                    .addOnFailureListener{e->
+                                                        progressDialog.dismiss()
+                                                        Toast.makeText(this@PdfAddActivity, "Failed to add due to ${e.message}", Toast.LENGTH_SHORT).show()
                                                     }
                                             }
                                         }
@@ -136,11 +156,17 @@ class PdfAddActivity : AppCompatActivity() {
             && data != null && data.data != null
         ) {
             mImageUri = data.data
-            // Set image preview
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, mImageUri)
             buttonChooseImage.text = "Изображение выбрано"
         }
     }
 }
 
-data class Book(val title: String, val description: String, val price: String, val category: String)
+data class Book(
+    val id: Long,
+    val title: String,
+    val description: String,
+    val price: String,
+    val category: String,
+    val rating: Int
+)

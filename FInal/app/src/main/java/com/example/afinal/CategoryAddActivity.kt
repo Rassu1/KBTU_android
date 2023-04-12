@@ -62,7 +62,7 @@ class CategoryAddActivity : AppCompatActivity() {
 
         var ref = FirebaseDatabase.getInstance().getReference("Categories")
 
-        ref.child( "$timestamp")
+        ref.child(category)
             .setValue(hashMap)
             .addOnSuccessListener {
                 progressDialog.dismiss()
