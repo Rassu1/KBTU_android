@@ -75,10 +75,10 @@ class AdapterCategory :RecyclerView.Adapter<AdapterCategory.HolderCategory>, Fil
     }
 
     private fun deleteCategory(model: ModelCategory, holder: HolderCategory) {
-        val id = model.id
+        val category = model.category
 
         val ref = FirebaseDatabase.getInstance().getReference("Categories")
-        ref.child(id)
+        ref.child(category)
             .removeValue()
             .addOnSuccessListener {
                 Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show()

@@ -43,7 +43,6 @@ class DashboardAdminActivity : AppCompatActivity() {
 
         homeFragment = MainFragment()
         dashboardFragment = RatingsFragment()
-        notificationsFragment = BucketFragment()
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.flFragment, homeFragment)
@@ -54,21 +53,14 @@ class DashboardAdminActivity : AppCompatActivity() {
                 R.id.home -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.flFragment, homeFragment)
-                        .addToBackStack(null) // Добавляем транзакцию в стек возврата
+                        .addToBackStack(null)
                         .commit()
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.ratings -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.flFragment, dashboardFragment)
-                        .addToBackStack(null) // Добавляем транзакцию в стек возврата
-                        .commit()
-                    return@setOnNavigationItemSelectedListener true
-                }
-                R.id.bucket -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.flFragment, notificationsFragment)
-                        .addToBackStack(null) // Добавляем транзакцию в стек возврата
+                        .addToBackStack(null)
                         .commit()
                     return@setOnNavigationItemSelectedListener true
                 }

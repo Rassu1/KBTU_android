@@ -17,12 +17,12 @@ import com.google.firebase.database.ValueEventListener
 class PdfListAdminActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPdfListAdminBinding
-
-    private lateinit var categoryArrayList: ArrayList<ModelCategory>
-
-    private lateinit var adapterCategory: AdapterCategory
-
+    private lateinit var bookArrayList: ArrayList<BookCategory>
+    private lateinit var adapterBook: AdapterBook
     private lateinit var firebaseAuth: FirebaseAuth
+
+    private var categoryId: Long = -1
+    private var category: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,27 +30,30 @@ class PdfListAdminActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
-        loadCategories()
 
+        categoryId = intent.getLongExtra("categoryId", -1)
+        category = intent.getStringExtra("category")
+
+        binding.subtitleTv.text = category
+
+        loadBooks()
     }
 
+    private fun loadBooks() {
+        bookArrayList = ArrayList()
+        adapterBook = AdapterBook(this@PdfListAdminActivity, bookArrayList)
 
-    private fun loadCategories() {
-        categoryArrayList = ArrayList()
-
-        val ref = FirebaseDatabase.getInstance().getReference("Categories")
+        val ref = FirebaseDatabase.getInstance().getReference("Categories").child(category.toString()).child("books")
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                categoryArrayList.clear()
+                bookArrayList.clear()
                 for (ds in snapshot.children) {
-                    val model = ds.getValue(ModelCategory::class.java)
+                    val model = ds.getValue(BookCategory::class.java)
 
-                    categoryArrayList.add(model!!)
+                    adapterBook.bookArrayList.add(model!!)
                 }
 
-                adapterCategory = AdapterCategory(this@PdfListAdminActivity, categoryArrayList)
-
-                binding.booksRv.adapter = adapterCategory
+                binding.booksRv.adapter = adapterBook
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -58,4 +61,10 @@ class PdfListAdminActivity : AppCompatActivity() {
             }
         })
     }
+
+
 }
+
+
+
+

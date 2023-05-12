@@ -8,11 +8,5 @@
     <item
         android:id="@+id/ratings"
         android:title="@string/ratings_menu"
-        android:icon="@drawable/star"/>
-    <item
-        android:id="@+id/bucket"
-        android:title="@string/bucket_menu"
-        android:icon="@drawable/telega"/>
-
-
+        android:icon="@drawable/star" />
 </menu>

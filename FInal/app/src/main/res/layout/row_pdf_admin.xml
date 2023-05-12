@@ -16,21 +16,26 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/categoryTv"
+            android:id="@+id/bookTv"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Category Title"
+            android:text="Book Title"
             android:paddingStart="30dp"
             android:textColor="@color/blue"/>
 
 
 
-        <ImageView
+        <TextView
+            android:id="@+id/ratingTv"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/book"
-            android:layout_gravity="center_vertical" />
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:paddingTop="10dp"/>
 
     </LinearLayout>
 

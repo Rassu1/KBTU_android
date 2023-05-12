@@ -23,4 +23,5 @@
     <string name="dashboardadmin">DashboardAdmin</string>
     <string name="email">email</string>
     <string name="button">button</string>
+    <string name="bucket">Корзина</string>
 </resources>

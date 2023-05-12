@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/home"
+        android:title="@string/main_menu"
+        android:icon="@drawable/lupa"/>
+    <item
+        android:id="@+id/ratings"
+        android:title="@string/ratings_menu"
+        android:icon="@drawable/star" />
+    <item
+        android:id="@+id/bucket"
+        android:title="@string/bucket"
+        android:icon="@drawable/star" />
 </menu>

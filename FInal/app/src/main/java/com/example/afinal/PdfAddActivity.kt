@@ -92,9 +92,11 @@ class PdfAddActivity : AppCompatActivity() {
                         progressDialog.show()
                         if (snapshot.exists()) {
                             val book = Book(id, title, description, price, category, rating)
+                            var ref = FirebaseDatabase.getInstance().getReference("Library")
                             val bookRef =
                                 database.child("Categories").child(category).child("books").child(title)
                             val bookId = bookRef.key.toString()
+                            ref.child(title).setValue(book)
                             bookRef.setValue(book).addOnSuccessListener {
                                 if (mImageUri != null) {
                                     val imageRef = storageRef.child("$bookId.jpg")
@@ -102,6 +104,7 @@ class PdfAddActivity : AppCompatActivity() {
                                     val uploadTask = imageRef.putStream(imageInputStream!!)
                                         .addOnSuccessListener { taskSnapshot: UploadTask.TaskSnapshot ->
                                             imageRef.downloadUrl.addOnSuccessListener { uri ->
+                                                ref.child(title).child("image").setValue(uri.toString())
                                                 database.child("Categories").child(category)
                                                     .child("books").child(bookId)
                                                     .child("image").setValue(uri.toString())
